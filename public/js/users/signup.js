@@ -16,33 +16,29 @@ btnInsUser.addEventListener("click", function () {
   auth
     .createUserWithEmailAndPassword(txtEmail.value, txtContra.value)
     .then((userCredential) => {
+      // Usuario ha sido creado, ahora agregamos a Firestore
       const user = userCredential.user;
+      const fechaActual = firebase.firestore.Timestamp.fromDate(new Date()); // Esto crea un timestamp de Firestore
+      
       db.collection("datosUsuarios")
-        .add({
-          idemp: user.uid,
+        .doc(user.uid) // Usar el UID como clave del documento para un fácil acceso
+        .set({
           usuario: txtNombre.value,
           email: user.email,
+          fechaCreacion: fechaActual,
+          ultimoAcceso: fechaActual,
         })
-        .then(function (docRef) {
-          alert("Usuario agregado satisfactoriamente");
+        .then(() => {
+          alert("Usuario agregado satisfactoriamente en Firestore");
           limpiar();
         })
-        .catch(function (FirebaseError) {
-          alert("Error al registrar datos del usuario." + FirebaseError);
+        .catch((FirebaseError) => {
+          alert("Error al registrar datos del usuario en Firestore." + FirebaseError);
         });
     })
     .catch((error) => {
-      alert("Error al agregar el nuevo usuario: " + error.message);
+      alert("Error al crear el usuario en Authentication: " + error.message);
     });
-});
-const fechaActual = new Date();
-
-db.collection("datosUsuarios").add({
-  idemp: user.uid,
-  usuario: txtNombre.value,
-  email: user.email,
-  fechaCreacion: fechaActual,
-  ultimoAcceso: fechaActual,
 });
 
 function limpiar() {

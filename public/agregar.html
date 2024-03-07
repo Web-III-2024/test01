@@ -138,32 +138,54 @@
     </header>
 
     <main class="row">
-      <h4 class="formatHead">Almacenar Imágenes con datos</h4>
-      <div>
-        <label for="txtPosic">Posición:</label><br />
-        <input type="text" id="txtPosic" /><br /><br />
-
-        <label for="txtSigno">Signo:</label><br />
-        <input type="text" id="txtSigno" /><br /><br />
-
-        <label for="txtRango">Rango:</label><br />
-        <input type="text" id="txtRango" /><br /><br />
-
-        <label for="txtArchi">File:</label><br />
-        <input type="file" id="txtArchi" />
-        <br /><br />
-        <label for="txtElemento">Elemento:</label><br />
-        <input type="text" id="txtElemento" /><br /><br />
-
-        <label for="txtAstro">Astro Celeste:</label><br />
-        <input type="text" id="txtAstro" /><br /><br />
-
-        <label for="txtPiedra">Piedra Preciosa:</label><br />
-        <input type="text" id="txtPiedra" /><br /><br />
-
-        <input type="button" id="btnLoad" name="btnLoad" value="Insert" />
-      </div>
-    </main>
+        <h4 class="formatHead">Almacenar Imágenes con datos</h4>
+        <div>
+          <label for="txtPosic">Posición:</label><br />
+          <input type="text" id="txtPosic" /><br /><br />
+      
+          <label for="txtSigno">Signo:</label><br />
+          <input type="text" id="txtSigno" /><br /><br />
+      
+          <label for="txtRango">Rango:</label><br />
+          <input type="text" id="txtRango" /><br /><br />
+      
+          <label for="txtArchi">File:</label><br />
+          <input type="file" id="txtArchi" />
+          <br /><br />
+      
+          <label for="selElemento">Elemento:</label><br />
+          <select id="selElemento">
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="Fuego">Fuego</option>
+            <option value="Tierra">Tierra</option>
+            <option value="Aire">Aire</option>
+            <option value="Agua">Agua</option>
+          </select><br /><br />
+      
+          <label for="selAstro">Astro Celeste:</label><br />
+          <select id="selAstro">
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="Sol">Sol</option>
+            <option value="Luna">Luna</option>
+            <option value="Marte">Marte</option>
+            <option value="Júpiter">Júpiter</option>
+            <option value="Saturno">Saturno</option>
+         </select><br /><br />
+      
+          <label for="selPiedra">Piedra Preciosa:</label><br />
+          <select id="selPiedra">
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="Rubí">Rubí</option>
+            <option value="Esmeralda">Esmeralda</option>
+            <option value="Zafiro">Zafiro</option>
+            <option value="Diamante">Diamante</option>
+            <option value="Ámbar">Ámbar</option>
+          </select><br /><br />
+      
+          <input type="button" id="btnLoad" name="btnLoad" value="Insert" />
+        </div>
+      </main>
+      
 
     <footer class="row"></footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
