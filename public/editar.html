@@ -50,8 +50,10 @@
     <script defer src="/__/firebase/init.js"></script>
     <!-- calling user authentication functions -->
     <script defer src="js/users/islogin.js"></script>
+    <!-- <script src="js/users/sesionTimeout.js"></script> -->
+
   </head>
-  <body class="container">
+  <body class="container" onload="validar()">
     <header class="header row">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -136,9 +138,10 @@
     </header>
 
     <main class="row">
-      <h4>Recuperando imágenes desde Firebase and Storage Container</h4>
-      <div id="tabla"></div>
-    </main>
+        <h4>Editar Signo Zodiacal</h4>
+        <div id="editarForm"></div>
+      </main>
+      
 
     <footer class="row"></footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -147,22 +150,13 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <!-- load js code to recover data from collection and container  -->
-    <script defer src="js/zodiac/lstzodiaco.js"></script>
-
-    <script>
-      function editarSigno(signoId) {
-        // Redirige a la página de edición con el ID del signo seleccionado
-        window.location.href = "editar.html?id=" + signoId;
-      }
-    </script>
-    <!-- <script src="js/users/sesionTimeout.js"></script> -->
+    <!-- load js code to storage data  -->
+    <script defer src="js/zodiac/editsigno.js"></script>
+    <script defer src="js/zodiac/addsigno.js"></script>
 
     <!-- <script>
-      document.addEventListener(
-        "DOMContentLoaded",
-        iniciarTemporizadorInactividad
-      );
-    </script> -->
+        document.addEventListener('DOMContentLoaded', iniciarTemporizadorInactividad);
+      </script> -->
+      
   </body>
 </html>

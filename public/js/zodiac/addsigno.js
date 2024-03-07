@@ -49,9 +49,9 @@ function limpiar() {
     txtPosic.value = '';
     txtSigno.value = '';
     txtRango.value = '';
-    selElemento.value = ''; // Limpia el nuevo campo (lista desplegable)
-    selAstro.value = ''; // Limpia el nuevo campo (lista desplegable)
-    selPiedra.value = ''; // Limpia el nuevo campo (lista desplegable)
+    selElemento.value = ''; 
+    selAstro.value = '';
+    selPiedra.value = '';
     txtArchi.value = '';
     txtPosic.focus();
 }

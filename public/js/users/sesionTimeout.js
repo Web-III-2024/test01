@@ -1,18 +1,33 @@
-let timer = setTimeout(salir, 180000);
+// let inactividad;
+// const umbralMovimientoMouse = 5;
 
-document.addEventListener('mousemove', resetTimer);
-document.addEventListener('keypress', resetTimer);
+// function iniciarTemporizadorInactividad() {
+//   document.addEventListener('mousemove', manejarMovimientoMouse);
+//   document.addEventListener('keydown', reiniciarTemporizadorInactividad);
+// }
 
-function resetTimer() {
-    clearTimeout(timer);
-    timer = setTimeout(salir, 180000);
-}
+// function reiniciarTemporizadorInactividad() {
+//   clearTimeout(inactividad);
+//   inactividad = setTimeout(cerrarSesion, 180000);
+// }
 
-function salir() {
-    firebase.auth().signOut().then(() => {
-        console.log('Sesión cerrada por inactividad');
-        window.location.href = 'login.html';
-    }).catch((error) => {
-        console.error('Error al cerrar sesión', error);
-    });
-}
+// function manejarMovimientoMouse(evento) {
+//   if (Math.abs(evento.movementX) > umbralMovimientoMouse || Math.abs(evento.movementY) > umbralMovimientoMouse) {
+//     reiniciarTemporizadorInactividad();
+//     document.removeEventListener('mousemove', manejarMovimientoMouse);
+//     document.removeEventListener('keydown', reiniciarTemporizadorInactividad);
+//   }
+// }
+
+// function cerrarSesion() {
+//   firebase.auth().signOut().then(function() {
+//     alert('Sesión cerrada debido a inactividad');
+//     window.location.href = 'login.html'; 
+//   }).catch(function(error) {
+//     console.error('Error al cerrar sesión:', error);
+//   });
+// }
+
+// document.addEventListener('mousemove', iniciarTemporizadorInactividad);
+
+// window.addEventListener('beforeunload', cerrarSesion);

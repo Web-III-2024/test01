@@ -16,6 +16,7 @@ db.collection("datosZodiaco").orderBy('posic', 'asc').get().then(function(query)
         salida += '<strong>Astro:</strong> ' + doc.data().astro + '<br/>';
         salida += '<strong>Elemento:</strong> ' + doc.data().elemento;
         salida += '</div><br/>';
+        salida += '<button class="btn btn-primary" onclick="editarSigno(\'' + doc.id + '\')">Editar</button>';
         salida += '</div>';
     });
     tabla.innerHTML = salida;
